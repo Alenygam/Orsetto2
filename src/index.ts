@@ -16,7 +16,7 @@ function runCommand(msg : Discord.Message) {
     const parsedMessage = parseMessage(msg);
     if (!parsedMessage) return;
     try {
-        const command = require(`./${parsedMessage[0]}/index.ts`);
+        const command = require(`./${parsedMessage[0]}/index`);
         command[parsedMessage[1]](client, msg, parsedMessage);
     } catch (err) {
         console.log(err);

@@ -8,6 +8,8 @@ const sendMessage_1 = __importDefault(require("./sendMessage"));
 const client = new discord_js_1.default.Client({ intents: [
         discord_js_1.default.Intents.FLAGS.GUILDS,
         discord_js_1.default.Intents.FLAGS.GUILD_MESSAGES,
+        discord_js_1.default.Intents.FLAGS.GUILD_VOICE_STATES,
+        discord_js_1.default.Intents.FLAGS.GUILD_MESSAGE_REACTIONS
     ] });
 const envVar = process.env;
 client.login(envVar.LOGIN_TOKEN);
@@ -18,7 +20,7 @@ function runCommand(msg) {
     if (!parsedMessage)
         return;
     try {
-        const command = require(`./${parsedMessage[0]}/index.ts`);
+        const command = require(`./${parsedMessage[0]}/index`);
         command[parsedMessage[1]](client, msg, parsedMessage);
     }
     catch (err) {
