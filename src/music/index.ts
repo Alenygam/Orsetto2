@@ -125,7 +125,6 @@ function createPlayer(client: Discord.Client, msg: Discord.Message, connection :
     let { newResource, url } = nextInQueue(msg.guild.id);
     if (!newResource) {
         sendMessage(client, msg, "Aggiungi qualcosa alla coda!");
-        audioPlayer.stop();
         return;
     }
     playingMessage(msg, url);
