@@ -31,14 +31,18 @@ const YoutubeHosts = [
     "music.youtube.com"
 ]
 export function skip(client : Discord.Client, msg: Discord.Message, _parsedMessage: Array<string>): void {
-    audioplayers[msg.guild.id].stop();
-
-    var connection = getVoiceConnection(msg.member.voice.channel.guild.id);
-    if (!connection) {
-        sendMessage(client, msg, "Beep Boop non sono connesso a nessun canale vocale.");
+    if (!audioplayers[msg.guild.id]) {
+        sendMessage(client, msg, "Beep Boop non sto facendo nulla.");
         return;
     }
-    createPlayer(client, msg, connection);
+
+    var { newResource, url } = nextInQueue(msg.guild.id);
+    if (!newResource) {
+        sendMessage(client, msg, "Beep Boop non c'è nulla dopo in coda.");
+        return;
+    }
+    audioplayers[msg.guild.id].play(newResource);
+    playingMessage(msg, url);
 }
 
 export function stop(client : Discord.Client, msg : Discord.Message, _parsedMessage : Array<string>): void {
