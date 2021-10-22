@@ -1,0 +1,19 @@
+[20:40:52.725] Global cache location '/home/alenygam/.cache/typescript/4.4', safe file path '/home/alenygam/Dev/Orsetto2/node_modules/typescript/lib/typingSafeList.json', types map path /home/alenygam/Dev/Orsetto2/node_modules/typescript/lib/typesMap.json
+[20:40:52.726] Processing cache location '/home/alenygam/.cache/typescript/4.4'
+[20:40:52.726] Trying to find '/home/alenygam/.cache/typescript/4.4/package.json'...
+[20:40:52.727] Loaded content of '/home/alenygam/.cache/typescript/4.4/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.563"}}
+[20:40:52.727] Loaded content of '/home/alenygam/.cache/typescript/4.4/package-lock.json'
+[20:40:52.727] Finished processing cache location '/home/alenygam/.cache/typescript/4.4'
+[20:40:52.727] Process id: 16869
+[20:40:52.727] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[20:40:52.727] validateDefaultNpmLocation: false
+[20:40:52.727] Npm config file: /home/alenygam/.cache/typescript/4.4/package.json
+[20:40:52.727] Updating types-registry npm package...
+[20:40:52.727] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[20:40:53.442]     Succeeded. stdout:
+    
+    up to date, audited 2 packages in 583ms
+
+found 0 vulnerabilities
+
+[20:40:53.442] Updated types-registry npm package
