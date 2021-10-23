@@ -7,7 +7,7 @@ export function insulta(client: Discord.Client, msg: Discord.Message, parsedMess
         sendMessage(client, msg, "Devi pingare qualcuno.");
         return;
     }
-    if (!/<\@\!.*>/.test(parsedMessage[2])) {
+    if (parsedMessage[2] !== "@everyone" && !/<\@\!.*>/.test(parsedMessage[2])) {
         sendMessage(client, msg, "Devi pingare un utente.");
         return;
     }
